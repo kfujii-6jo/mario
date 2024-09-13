@@ -14,7 +14,7 @@ func SetupRouter() *gin.Engine {
 		v1 := internalApi.Group("/v1")
 		{
 			v1.GET("/user", controllers.GetUsers)
-		    v1.POST("/user", controllers.CreateUser)
+			v1.POST("/user", controllers.CreateUser)
 		}
 	}
 	externalApi := router.Group("/api")
@@ -22,7 +22,7 @@ func SetupRouter() *gin.Engine {
 		v1 := externalApi.Group("/v1")
 		{
 			v1.GET("/user", controllers.GetUsers)
-		    v1.POST("/user", controllers.CreateUser)
+			v1.POST("/user", controllers.CreateUser)
 		}
 	}
 
