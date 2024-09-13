@@ -1,0 +1,40 @@
+services:
+  api:
+    container_name: mario-api
+    build:
+      context: .
+      dockerfile: ./build/docker/v1/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ENV=local
+    # volumes:
+    #   - ./:/app
+  auth:
+    container_name: mario-auth
+    build:
+      context: .
+      dockerfile: ./build/docker/v1/Dockerfile
+    environment:
+      - ENV=local
+
+  mysql:
+    container_name: mario-mysql
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: goapp
+      MYSQL_USER: goapp_user
+      MYSQL_PASSWORD: goapp_password
+    ports:
+      - "3306:3306"
+    # depends_on:
+    #   - api
+
+  redis:
+    container_name: mario-redis
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    # depends_on:
+    #   - api
