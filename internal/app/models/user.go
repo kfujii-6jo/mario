@@ -3,13 +3,14 @@ package models
 
 type User struct {
     ID   int    `json:"id"`
-    Name string `json:"name"`
+    Username string `json:"username"`
     Age  int    `json:"age"`
+    Password string `json:"password"`
 }
 
 var users = []User{
-    {ID: 1, Name: "Alice", Age: 30},
-    {ID: 2, Name: "Bob", Age: 25},
+    {ID: 1, Username: "Alice", Age: 30, Password: "password123"},
+    {ID: 2, Username: "Bob", Age: 25, Password: "password123"},
 }
 
 func GetAllUsers() []User {
