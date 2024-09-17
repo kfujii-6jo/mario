@@ -3,7 +3,7 @@ services:
     container_name: mario-api
     build:
       context: .
-      dockerfile: ./build/docker/v1/Dockerfile
+      dockerfile: ./build/docker/v2/Dockerfile
     ports:
       - "8080:8080"
     environment:
