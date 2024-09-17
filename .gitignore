@@ -26,3 +26,5 @@ go.work.sum
 
 # binary file
 run-api
+
+secrets.key
