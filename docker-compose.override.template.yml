@@ -1,0 +1,5 @@
+services:
+  api:
+    environment:
+      - ENV=local
+      - SECRET_KEY=
